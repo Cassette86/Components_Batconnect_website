@@ -15,8 +15,13 @@ imageContainers.forEach(container => {
 
 function moveImagesLeft(){
     if (imageIndex > 0) {
+        const gotorightimage = images[imageIndex];
         imageIndex--;
+        const middleimage = images[imageIndex];
         console.log(imageIndex);
+        gotorightimage.style.marginLeft = "0px";
+        middleimage.style.marginLeft = "50%";
+        middleimage.style.marginRight = "7%";        
     }
         
     else
@@ -26,8 +31,13 @@ function moveImagesLeft(){
 
 function moveImagesRight() {
     if (imageIndex < images.length -1) {
+        const gotoleftimage = images[imageIndex];
         imageIndex++;
+        const middleimage = images[imageIndex];
         console.log(imageIndex);
+        gotoleftimage.style.marginLeft = "-506px";
+        middleimage.style.marginLeft = "50%";
+        gotoleftimage.style.marginRight = "0px";
     }
 
     else
