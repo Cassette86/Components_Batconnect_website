@@ -15,7 +15,7 @@ body {
     margin-right: 7%;
     box-shadow: 0px 0px 1em rgba(0, 0, 0, 0.1);
     transition: margin-left 0.5s ease;
-    
+
 }
 
 .arrow_container{
@@ -42,4 +42,61 @@ body {
 
 .arrow:active{
     box-shadow: inset 0em 0.5em 0.5em rgba(0, 0, 0, 0.1);
+}
+
+.text_container{
+    margin-left : 10%;
+    height: 400px;
+    width : 30%;
+    overflow: hidden;
+}
+
+.text_part {
+    color: #333;
+    text-align: justify;
+    margin-bottom: 400px;
+}
+
+.text_part h3{
+    font-size : 35;
+    font-weight: bold;
+}
+
+.text_part p{
+    font-size: 20;
+    font-weight: 300;
+}
+
+.bouton_bat_simple{
+    position: relative;
+    background-color: transparent;
+    color: #375BA7;
+    padding: 10px 0px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+  }
+
+.bouton_bat_simple::after {
+  content: url('https://batconnect.fr/wp-content/uploads/2024/05/Vector.png');
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 65%;
+  right: 10px;
+  transform: translateY(-10%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.bouton_bat_simple:hover {
+  background-color: transparent;
+  padding: 10px 36px 10px 0px;
+  border: 2px solid transparent;
+}
+
+.bouton_bat_simple:hover::after {
+  opacity: 1;
 }

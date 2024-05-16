@@ -11,8 +11,6 @@ imageContainers.forEach(container => {
     });
 });
 
-
-
 function moveImagesLeft(){
     if (imageIndex > 0) {
         const gotorightimage = images[imageIndex];
