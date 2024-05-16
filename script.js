@@ -1,8 +1,12 @@
 const leftArrow = document.getElementById('left-arrow');
 const rightArrow = document.getElementById('right-arrow');
 const imageContainers = document.querySelectorAll('.image-container');
+const textContainers = document.querySelector('.text-wrap');
 const images = [];
-var imageIndex = 0;
+let imageIndex = 0; 
+let margeText = "0px"; 
+let margeImage = "-506px"; 
+const currentImageMarge = '50%';
 
 imageContainers.forEach(container => {
     const containerImages = container.querySelectorAll('img');
@@ -11,39 +15,39 @@ imageContainers.forEach(container => {
     });
 });
 
-
-
-function moveImagesLeft(){
+function moveImagesLeft() {
     if (imageIndex > 0) {
-        const gotorightimage = images[imageIndex];
+        const goToRightImage = images[imageIndex];
         imageIndex--;
-        const middleimage = images[imageIndex];
-        console.log(imageIndex);
-        gotorightimage.style.marginLeft = "0px";
-        middleimage.style.marginLeft = "50%";
-        middleimage.style.marginRight = "7%";        
+        const middleImage = images[imageIndex];
+        goToRightImage.style.marginLeft = "0px";
+        middleImage.style.marginLeft = "50%";
+        middleImage.style.marginRight = "7%";
+        margeText = parseInt(margeText) + 320 + "px";
+        textContainers.style.marginTop = margeText;
     }
-        
-    else
-        console.log('left arrow clicked but out of limits');
-
 }
 
 function moveImagesRight() {
-    if (imageIndex < images.length -1) {
-        const gotoleftimage = images[imageIndex];
+    if (imageIndex < images.length - 1) {
+        const goToLeftImage = images[imageIndex];
         imageIndex++;
-        const middleimage = images[imageIndex];
-        console.log(imageIndex);
-        gotoleftimage.style.marginLeft = "-506px";
-        middleimage.style.marginLeft = "50%";
-        gotoleftimage.style.marginRight = "0px";
+        const middleImage = images[imageIndex]; 
+        margeImage = parseInt(margeImage) - 2 + "px";
+        goToLeftImage.style.marginLeft = margeImage;
+        middleImage.style.marginLeft = "50%";
+        goToLeftImage.style.marginRight = "0px";
+        margeText = parseInt(margeText) - 320 + "px";
+        textContainers.style.marginTop = margeText;
     }
-
-    else
-        console.log('right arrow clicked but out of limits');
-
 }
-console.log(images.length);
+
 leftArrow.addEventListener('click', moveImagesLeft);
 rightArrow.addEventListener('click', moveImagesRight);
+document.addEventListener('keydown', function(event) {
+    if (event.key === "ArrowLeft") {
+        moveImagesLeft();
+    } else if (event.key === "ArrowRight") {
+        moveImagesRight();
+    }
+});
