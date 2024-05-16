@@ -8,14 +8,15 @@ body {
     white-space: nowrap;
     -ms-overflow-style: none; 
     scrollbar-width: none;  
+    z-index: 10;
+    position : relative;
 }
 
 .image-container img {
     display: inline-block;
     margin-right: 7%;
     box-shadow: 0px 0px 1em rgba(0, 0, 0, 0.1);
-    transition: margin-left 0.5s ease;
-
+    transition: margin-left 1s ease;
 }
 
 .arrow_container{
@@ -46,57 +47,38 @@ body {
 
 .text_container{
     margin-left : 10%;
-    height: 400px;
+    height: 320px;
     width : 30%;
     overflow: hidden;
+    position : absolute;
+    top : 0px;
+}
+
+.text-wrap{
+    transition: margin-top 1s ease;
 }
 
 .text_part {
     color: #333;
     text-align: justify;
-    margin-bottom: 400px;
+    margin-bottom: 0px;
+    width: 100%;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrer horizontalement */
+    justify-content: center; /* Centrer verticalement */
+    gap: 20px;
 }
 
-.text_part h3{
-    font-size : 35;
+.text_part h2 {
+    font-size: 30px;
     font-weight: bold;
+    margin: 0; /* Pour supprimer la marge par défaut */
 }
 
-.text_part p{
-    font-size: 20;
+.text_part p {
+    font-size: 20px;
     font-weight: 300;
-}
-
-.bouton_bat_simple{
-    position: relative;
-    background-color: transparent;
-    color: #375BA7;
-    padding: 10px 0px;
-    border: 2px solid transparent;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: all 0.3s ease;
-    box-sizing: border-box;
-  }
-
-.bouton_bat_simple::after {
-  content: url('https://batconnect.fr/wp-content/uploads/2024/05/Vector.png');
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  top: 65%;
-  right: 10px;
-  transform: translateY(-10%);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.bouton_bat_simple:hover {
-  background-color: transparent;
-  padding: 10px 36px 10px 0px;
-  border: 2px solid transparent;
-}
-
-.bouton_bat_simple:hover::after {
-  opacity: 1;
+    margin: 0; /* Pour supprimer la marge par défaut */
 }
