@@ -19,7 +19,7 @@ function moveImagesLeft(){
         console.log(imageIndex);
         gotorightimage.style.marginLeft = "0px";
         middleimage.style.marginLeft = "50%";
-        middleimage.style.marginRight = "7%";        
+        middleimage.style.marginRight = "7%";
     }
         
     else
