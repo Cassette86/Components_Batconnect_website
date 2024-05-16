@@ -1,8 +1,11 @@
 const leftArrow = document.getElementById('left-arrow');
 const rightArrow = document.getElementById('right-arrow');
 const imageContainers = document.querySelectorAll('.image-container');
+const textContainers = document.querySelector('.text-wrap');
 const images = [];
 var imageIndex = 0;
+var margeText = "0px";
+var margeImage = "-506px";
 
 imageContainers.forEach(container => {
     const containerImages = container.querySelectorAll('img');
@@ -10,7 +13,6 @@ imageContainers.forEach(container => {
         images.push(image);
     });
 });
-
 
 
 function moveImagesLeft(){
@@ -21,7 +23,9 @@ function moveImagesLeft(){
         console.log(imageIndex);
         gotorightimage.style.marginLeft = "0px";
         middleimage.style.marginLeft = "50%";
-        middleimage.style.marginRight = "7%";        
+        middleimage.style.marginRight = "7%";
+        margeText = parseInt(margeText) + 320 + "px";
+        textContainers.style.marginTop = margeText;
     }
         
     else
@@ -35,9 +39,12 @@ function moveImagesRight() {
         imageIndex++;
         const middleimage = images[imageIndex];
         console.log(imageIndex);
-        gotoleftimage.style.marginLeft = "-506px";
+        margeImage = parseInt(margeImage) -2 + "px";
+        gotoleftimage.style.marginLeft = margeImage;
         middleimage.style.marginLeft = "50%";
         gotoleftimage.style.marginRight = "0px";
+        margeText = parseInt(margeText) - 320 + "px";
+        textContainers.style.marginTop = margeText;
     }
 
     else

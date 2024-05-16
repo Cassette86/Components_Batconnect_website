@@ -8,14 +8,15 @@ body {
     white-space: nowrap;
     -ms-overflow-style: none; 
     scrollbar-width: none;  
+    z-index: 10;
+    position : relative;
 }
 
 .image-container img {
     display: inline-block;
     margin-right: 7%;
     box-shadow: 0px 0px 1em rgba(0, 0, 0, 0.1);
-    transition: margin-left 0.5s ease;
-    
+    transition: margin-left 1s ease;
 }
 
 .arrow_container{
@@ -42,4 +43,42 @@ body {
 
 .arrow:active{
     box-shadow: inset 0em 0.5em 0.5em rgba(0, 0, 0, 0.1);
+}
+
+.text_container{
+    margin-left : 10%;
+    height: 320px;
+    width : 30%;
+    overflow: hidden;
+    position : absolute;
+    top : 0px;
+}
+
+.text-wrap{
+    transition: margin-top 1s ease;
+}
+
+.text_part {
+    color: #333;
+    text-align: justify;
+    margin-bottom: 0px;
+    width: 100%;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrer horizontalement */
+    justify-content: center; /* Centrer verticalement */
+    gap: 20px;
+}
+
+.text_part h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0; /* Pour supprimer la marge par défaut */
+}
+
+.text_part p {
+    font-size: 20px;
+    font-weight: 300;
+    margin: 0; /* Pour supprimer la marge par défaut */
 }
