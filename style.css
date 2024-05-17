@@ -73,6 +73,7 @@ body {
     align-items: center;
     justify-content: center; 
     gap: 20px;
+    transition: opacity 1s ease;
 }
 
 .text_part h2 {
