@@ -15,10 +15,29 @@ imageContainers.forEach(container => {
     });
 });
 
+function updateArrowOpacity() {
+    if (imageIndex === 0) {
+        leftArrow.style.opacity = 0.4;
+        leftArrow.style.cursor = "default";
+    } else {
+        leftArrow.style.opacity = 1;
+        leftArrow.style.cursor = "pointer";
+    }
+
+    if (imageIndex === images.length - 1) {
+        rightArrow.style.opacity = 0.4;
+        rightArrow.style.cursor = "default";
+    } else {
+        rightArrow.style.opacity = 1;
+        rightArrow.style.cursor = "pointer";
+    }
+}
+
 function moveImagesLeft() {
     if (imageIndex > 0) {
         const goToRightImage = images[imageIndex];
         imageIndex--;
+        updateArrowOpacity();
         const middleImage = images[imageIndex];
         goToRightImage.style.marginLeft = "0px";
         middleImage.style.marginLeft = "50%";
@@ -32,6 +51,7 @@ function moveImagesRight() {
     if (imageIndex < images.length - 1) {
         const goToLeftImage = images[imageIndex];
         imageIndex++;
+        updateArrowOpacity();
         const middleImage = images[imageIndex]; 
         margeImage = parseInt(margeImage) - 2 + "px";
         goToLeftImage.style.marginLeft = margeImage;
@@ -51,3 +71,4 @@ document.addEventListener('keydown', function(event) {
         moveImagesRight();
     }
 });
+updateArrowOpacity();
