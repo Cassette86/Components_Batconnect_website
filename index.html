@@ -28,10 +28,10 @@
         </div>
     </div>
     <div class="image-container">
-        <img style="margin-left: 50%;" src="images/Golf.png" alt="Image 1">
-        <img src="images/Aero.png" alt="Image 2">
-        <img src="images/Nautique.png" alt="Image 3">
-        <img src="images/Tech.png" alt="Image 4">
+        <img style="margin-left: 50%;" src="images/Golf.png" alt="Image 1" class="tilt-effect">
+        <img src="images/Aero.png" alt="Image 2" class="tilt-effect">
+        <img src="images/Nautique.png" alt="Image 3" class="tilt-effect">
+        <img src="images/Tech.png" alt="Image 4" class="tilt-effect">
     </div>
     <div class="arrow_container">
         <div class="arrow" id="left-arrow">
@@ -42,5 +42,15 @@
         </div>
     </div>
     <script src="script.js"></script>
+    <script src="vanilla-tilt.babel.js"></script>
+    <script>
+        // Initialise Vanilla Tilt pour toutes les images ayant la classe "tilt-effect"
+        VanillaTilt.init(document.querySelectorAll(".tilt-effect"), {
+            max: 5, // Réduire l'angle maximal de basculement
+            speed: 12, // Augmenter la vitesse du mouvement
+            glare: true,
+            "max-glare": 12 // Réduire l'intensité maximale du reflet
+        });
+    </script>
 </body>
 </html>

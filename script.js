@@ -28,7 +28,6 @@ function updateArrowOpacity() {
         leftArrow.style.opacity = 1;
         leftArrow.style.cursor = "pointer";
     }
-
     if (imageIndex === images.length - 1) {
         rightArrow.style.opacity = 0.4;
         rightArrow.style.cursor = "default";
@@ -94,4 +93,5 @@ document.addEventListener('keydown', function(event) {
         moveImagesRight();
     }
 });
+
 updateArrowOpacity();
