@@ -16,7 +16,6 @@ imageContainers.forEach(container => {
     });
 });
 
-
 textParts.forEach(text => {
     texts.push(text);
 });
