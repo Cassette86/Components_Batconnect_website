@@ -1,18 +1,23 @@
 const leftArrow = document.getElementById('left-arrow');
 const rightArrow = document.getElementById('right-arrow');
 const imageContainers = document.querySelectorAll('.image-container');
-const textContainers = document.querySelector('.text-wrap');
+const textParts = document.querySelectorAll('.text_part');
+const textWrap = document.querySelector('.text-wrap');
 const images = [];
+const texts = [];
 let imageIndex = 0; 
 let margeText = "0px"; 
 let margeImage = "-506px"; 
-const currentImageMarge = '50%';
 
 imageContainers.forEach(container => {
     const containerImages = container.querySelectorAll('img');
     containerImages.forEach(image => {
         images.push(image);
     });
+});
+
+textParts.forEach(text => {
+    texts.push(text);
 });
 
 function updateArrowOpacity() {
@@ -43,7 +48,16 @@ function moveImagesLeft() {
         middleImage.style.marginLeft = "50%";
         middleImage.style.marginRight = "7%";
         margeText = parseInt(margeText) + 320 + "px";
-        textContainers.style.marginTop = margeText;
+        textWrap.style.marginTop = margeText;
+        
+        // Mettre à jour l'opacité du texte
+        texts.forEach((text, index) => {
+            if (index === imageIndex) {
+                text.style.opacity = 1;
+            } else {
+                text.style.opacity = 0;
+            }
+        });
     }
 }
 
@@ -58,7 +72,16 @@ function moveImagesRight() {
         middleImage.style.marginLeft = "50%";
         goToLeftImage.style.marginRight = "0px";
         margeText = parseInt(margeText) - 320 + "px";
-        textContainers.style.marginTop = margeText;
+        textWrap.style.marginTop = margeText;
+        
+        // Mettre à jour l'opacité du texte
+        texts.forEach((text, index) => {
+            if (index === imageIndex) {
+                text.style.opacity = 1;
+            } else {
+                text.style.opacity = 0;
+            }
+        });
     }
 }
 
