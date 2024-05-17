@@ -9,6 +9,7 @@ let imageIndex = 0;
 let margeText = "0px"; 
 let margeImage = "-506px"; 
 
+
 imageContainers.forEach(container => {
     const containerImages = container.querySelectorAll('img');
     containerImages.forEach(image => {
@@ -94,4 +95,5 @@ document.addEventListener('keydown', function(event) {
         moveImagesRight();
     }
 });
+
 updateArrowOpacity();
