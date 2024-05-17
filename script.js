@@ -3,17 +3,16 @@ const rightArrow = document.getElementById('right-arrow');
 const imageContainers = document.querySelectorAll('.image-container');
 const textContainers = document.querySelector('.text-wrap');
 const images = [];
-const texts = [];
 let imageIndex = 0; 
 let margeText = "0px"; 
 let margeImage = "-506px"; 
+const currentImageMarge = '50%';
 
-imageContainers.forEach(image => {
-    images.push(image);
-});
-
-textContainers.forEach(text => {
-    texts.push(text);
+imageContainers.forEach(container => {
+    const containerImages = container.querySelectorAll('img');
+    containerImages.forEach(image => {
+        images.push(image);
+    });
 });
 
 function updateArrowOpacity() {
@@ -73,4 +72,3 @@ document.addEventListener('keydown', function(event) {
     }
 });
 updateArrowOpacity();
-console.log(texts)
