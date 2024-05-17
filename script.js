@@ -17,7 +17,7 @@ imageContainers.forEach(container => {
 
 function updateArrowOpacity() {
     if (imageIndex === 0) {
-        leftArrow.style.opacity = 0;
+        leftArrow.style.opacity = 0.4;
         leftArrow.style.cursor = "default";
     } else {
         leftArrow.style.opacity = 1;
@@ -25,7 +25,7 @@ function updateArrowOpacity() {
     }
 
     if (imageIndex === images.length - 1) {
-        rightArrow.style.opacity = 0;
+        rightArrow.style.opacity = 0.4;
         rightArrow.style.cursor = "default";
     } else {
         rightArrow.style.opacity = 1;
