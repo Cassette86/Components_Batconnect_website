@@ -9,13 +9,13 @@ let imageIndex = 0;
 let margeText = "0px"; 
 let margeImage = "-506px"; 
 
-
 imageContainers.forEach(container => {
     const containerImages = container.querySelectorAll('img');
     containerImages.forEach(image => {
         images.push(image);
     });
 });
+
 
 textParts.forEach(text => {
     texts.push(text);
@@ -29,7 +29,6 @@ function updateArrowOpacity() {
         leftArrow.style.opacity = 1;
         leftArrow.style.cursor = "pointer";
     }
-
     if (imageIndex === images.length - 1) {
         rightArrow.style.opacity = 0.4;
         rightArrow.style.cursor = "default";
