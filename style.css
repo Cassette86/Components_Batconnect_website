@@ -24,6 +24,7 @@ body {
     margin-left: 50%;
     margin-top: 40px;
     gap: 20px; 
+    
 }
 
 .arrow{
@@ -34,6 +35,7 @@ body {
     background-color: #ebebeb;
     justify-content: center;
     align-items: center;
+    transition: opacity 0.5s ease;
 }
 
 .arrow:hover{
@@ -55,7 +57,9 @@ body {
 }
 
 .text-wrap{
-    transition: margin-top 1s ease;
+    transition-property: margin-top;
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
 }
 
 .text_part {
@@ -66,19 +70,19 @@ body {
     height: 320px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centrer horizontalement */
-    justify-content: center; /* Centrer verticalement */
+    align-items: center;
+    justify-content: center; 
     gap: 20px;
 }
 
 .text_part h2 {
     font-size: 30px;
     font-weight: bold;
-    margin: 0; /* Pour supprimer la marge par défaut */
+    margin: 0; 
 }
 
 .text_part p {
     font-size: 20px;
     font-weight: 300;
-    margin: 0; /* Pour supprimer la marge par défaut */
+    margin: 0; 
 }
