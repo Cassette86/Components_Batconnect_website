@@ -94,4 +94,9 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
+images.forEach((image) => {
+    image.addEventListener('click', function() {
+        moveImagesRight();
+    });
+});
 updateArrowOpacity();
